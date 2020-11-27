@@ -1,0 +1,388 @@
+/*--------------------Pagina HTML--------------------*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+h2 {
+    letter-spacing: 3px;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.125rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 5.3125rem 5.3125rem 5.3125rem 5.3125rem;
+    width: 100%;
+}
+
+/*--------------------NavBar--------------------*/
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    width: 100%;
+    color: white;
+    position: fixed;
+    z-index: 99;
+    transition: background-color 400ms ease-in;
+}
+
+
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 37.5rem;
+	text-decoration: none;
+}
+
+.nav-links li {
+    list-style: none;
+	text-decoration: none;
+}
+
+li:hover a {
+    color: rgb(255, 174, 66);
+}
+
+.nav-links a {
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 45vh;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        justify-content: space-around;
+        background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95));
+    }
+
+    .nav-links li {
+        opacity: 0%;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.is-solid {
+    background-color: rgb(36, 36, 36);
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/*--------------------Principal--------------------*/
+#Home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("../img/bg.jpg") no-repeat center center fixed;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#logo {
+    width: 23.5%;
+    margin: 1.03vh;
+}
+
+#Home > span {
+    margin-bottom: 19.09vh;
+}
+
+#Home button {
+    cursor: pointer;
+    border-style: solid;
+    border-width: 4px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    height: 60px;
+    width: 255px;
+    outline: none;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+}
+
+#Home button:hover {
+    color: black;
+}
+
+
+
+#bookAppointmentBtn {
+    background:  #ff8c00;
+    border-color:  #ff8c02;
+}
+
+/*--------------------Resultados--------------------*/
+#About {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#Crew {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    text-align: center;
+    grid-gap: 5vw;
+}
+
+.gallery {
+    display: none;
+}
+
+#About-Content p,
+.gallery-cell {
+    font-weight: 700;
+    line-height: 5rem;
+    font-family: "Merienda One", cursive;
+    color: rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 3px 3px #fff;
+    text-align: center;
+}
+
+.gallery-cell {
+    line-height: 3em;
+}
+
+#About > span {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+}
+
+#About > span p {
+    font-style: italic;
+    margin: 1.5rem 0rem 0.625rem 0rem;
+}
+
+#Crew p {
+    font-size: 1.75rem;
+}
+
+.grid-item-c {
+    border-radius: 6px;
+    width: 22.5vw;
+    height: 27.5vw;
+    box-shadow: 1px 1px 2px 3px #ccc;
+}
+
+/*--------------------Produtos--------------------*/
+#Gallery {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#Gallery-Content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: space-evenly;
+    align-content: space-evenly;
+    grid-gap: 5vw;
+    height: auto;
+}
+
+.grid-item-g {
+    border-radius: 16px;
+    width: 22.5vw;
+    height: 22.5vw;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 1px 1px 2px 3px #ccc;
+}
+
+
+
+/*--------------------CSS Responsivo--------------------*/
+@media only screen and (max-width: 1200px) {
+    /*----------Pagina do HTML----------*/
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 2.75rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 7.5em 3em 3em 3em;
+    }
+
+    /*----------Principal----------*/
+    #logo {
+        width: 20em;
+    }
+
+    #Home {
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url("../img/bg-mobile.jpg");
+    }
+
+    #Home > span {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #Home button {
+        margin: 2.5px;
+    }
+
+    /*----------Resultados----------*/
+    #About > span {
+        width: 80vw;
+    }
+
+    #About-Content {
+        display: none;
+    }
+
+    .gallery {
+        display: block;
+        width: 85vw;
+        height: auto;
+        margin-bottom: 3em;
+    }
+
+    .gallery-cell {
+        text-align: center;
+    }
+
+    .grid-item-c {
+        width: 35vw;
+        height: 45vw;
+    }
+
+    /*----------Produtos----------*/
+    #Gallery-Content {
+        display: none;
+    }
+
+    .grid-item-g {
+        width: 45vw;
+        height: 45vw;
+    }
+
+    
+
+    @media only screen and (max-width: 900px) {
+        /*----------CSS Responsivo 2----------*/
+        .container {
+            padding: 3em 3em 3em 3em;
+        }
+
+        /*----------Resultados----------*/
+        .grid-item-c {
+            width: 16.5em;
+            height: 20.5em;
+        }
+
+        /*----------Produtos----------*/
+        .grid-item-g {
+            width: 19em;
+            height: 19em;
+        }
+    }
+}
+
+
